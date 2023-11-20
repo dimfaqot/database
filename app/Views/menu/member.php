@@ -1,0 +1,8 @@
+  <div class="d-flex gap-1 p-2">
+
+
+      <?php foreach (menus() as $k => $i) : ?>
+          <a href="<?= base_url(); ?><?= $i['controller']; ?><?= ($i['controller'] == 'calon' || $i['controller'] == 'hasil' ? '/' . date('Y') : ($i['controller'] == 'pemilih' ? '/' . date('Y') . '/Belum/1/Karyawan/Putra/updated_at/DESC' : ($i['controller'] == 'artikel' ? '/label/Headlines/1/updated_at/DESC' : ($i['controller'] == 'mapel' ? '/MUL' : ($i['controller'] == 'nilai' ? '/' . date('Y') . '/MUL' : ($i['controller'] == 'karyawan' || $i['controller'] == 'recruitment' ? '/Existing/1/SMP/updated_at/DESC/' . ($i["controller"] == "karyawan" ? "Aktif" : "Register") . '/All' : ($i['controller'] == 'santri' || $i['controller'] == 'ppdb' ? '/' . ($i['controller'] == 'santri' ? 'All' : tahun_santri('ppdb')) . '/Existing/1/SMP/updated_at/DESC/' . ($i["controller"] == "santri" ? "Aktif" : "Register") . '/All' : ($i['controller'] == 'pilangsari' ? '/Karyawan/1/updated_at/DESC/SSJ'  : ($i['controller'] == 'piagam' ? '/Dinas/' . date('Y') : ($i['controller'] == 'sk' ? '/All/' . date('Y') . '/updated_at/DESC' : ($i['controller'] == 'identitas' ? '/' . strtolower(session('role')) . '/' . strtolower(session('section')) . '/Profile' : ($i['controller'] == 'rental' || $i['controller'] == 'rebana' ? '/' . date('Y') . '/' . date('m') : ($i['controller'] == 'pesanan' || $i['controller'] == 'laporan' || $i['controller'] == 'inventaris' || $i['controller'] == 'nota' ? '/' . date('Y') . '/' . date('m') : ($i['controller'] == 'tugasku' ? '/' . date('Y') . '/' . date('m') . '/All' : '')))))))))))))); ?>" class="<?= (url() == $i['controller'] ? 'btn_main' : 'btn_main_inactive'); ?>"><i class="<?= $i['icon']; ?>"></i> <?= $i['menu']; ?></a>
+      <?php endforeach; ?>
+
+  </div>
