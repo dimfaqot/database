@@ -1535,12 +1535,14 @@
         e.preventDefault();
         let tabel = $(this).data('tabel');
         let id = $(this).data('id');
+        let col = $(this).data('col');
         let val = $(this).val();
 
         post("change_status", {
             tabel,
             id,
-            val
+            val,
+            col
         }).then((res) => {
             if (res.status == '200') {
                 sukses(res.message);

@@ -750,6 +750,7 @@ class Home extends BaseController
     {
         $tabel = clear($this->request->getVar('tabel'));
         $id = clear($this->request->getVar('id'));
+        $col = clear($this->request->getVar('col'));
         $val = clear($this->request->getVar('val'));
 
         $db = db($tabel, get_db($tabel));
@@ -760,7 +761,7 @@ class Home extends BaseController
             gagal_js('Id tidak ditemukan!.');
         }
 
-        $q['status'] = $val;
+        $q[$col] = $val;
         $q['updated_at'] = time();
         $q['petugas'] = session('nama');
 
