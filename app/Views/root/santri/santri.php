@@ -190,6 +190,7 @@ $gender = ['L', 'P', 'All'];
                 <th scope="col">#</th>
                 <th>No. Id <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Urutkan berdasar no. id" href="<?= base_url() . url(3); ?>/<?= url(4); ?>/<?= url(5); ?>/<?= url(6); ?>/<?= url(7); ?>/no_id/<?= (url(9) == 'ASC' ? 'DESC' : 'ASC'); ?>/<?= url(10); ?>/<?= url(11); ?>"><?= (url(8) == 'no_id' && url(9) == 'DESC' ? $desc_icon : $asc_icon); ?></a></th>
                 <th>Nama <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Urutkan berdasar nama" href="<?= base_url() . url(3); ?>/<?= url(4); ?>/<?= url(5); ?>/<?= url(6); ?>/<?= url(7); ?>/nama/<?= (url(9) == 'ASC' ? 'DESC' : 'ASC'); ?>/<?= url(10); ?>/<?= url(11); ?>"><?= (url(8) == 'nama' && url(9) == 'DESC' ? $desc_icon : $asc_icon); ?></a></th>
+                <th>Masa Belajar <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Urutkan masa belajar" href="<?= base_url() . url(3); ?>/<?= url(4); ?>/<?= url(5); ?>/<?= url(6); ?>/<?= url(7); ?>/pengabdian/<?= (url(9) == 'ASC' ? 'DESC' : 'ASC'); ?>/<?= url(10); ?>/<?= url(11); ?>"><?= (url(8) == 'pengabdian' && url(9) == 'DESC' ? $desc_icon : $asc_icon); ?></a></th>
 
                 <!-- <th>Hp Ayah <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Urutkan berdasar hp_ayah" href="<?= base_url() . url(3); ?>/<?= url(4); ?>/<?= url(5); ?>/<?= url(6); ?>/<?= url(7); ?>/hp_ayah/<?= (url(9) == 'ASC' ? 'DESC' : 'ASC'); ?>/<?= url(10); ?>/<?= url(11); ?>"><?= (url(8) == 'hp_ayah' && url(9) == 'DESC' ? $desc_icon : $asc_icon); ?></a></th>
                 <th>Umur <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Urutkan berdasar umur" href="<?= base_url() . url(3); ?>/<?= url(4); ?>/<?= url(5); ?>/<?= url(6); ?>/<?= url(7); ?>/umur/<?= (url(9) == 'ASC' ? 'DESC' : 'ASC'); ?>/<?= url(10); ?>/<?= url(11); ?>"><?= (url(8) == 'umur' && url(9) == 'DESC' ? $desc_icon : $asc_icon); ?></a></th> -->
@@ -197,7 +198,6 @@ $gender = ['L', 'P', 'All'];
                 <th>Sub <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Urutkan berdasar sub" href="<?= base_url() . url(3); ?>/<?= url(4); ?>/<?= url(5); ?>/<?= url(6); ?>/<?= url(7); ?>/sub/<?= (url(9) == 'ASC' ? 'DESC' : 'ASC'); ?>/<?= url(10); ?>/<?= url(11); ?>"><?= (url(8) == 'sub' && url(9) == 'DESC' ? $desc_icon : $asc_icon); ?></a></th>
                 <th>Pondok <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Urutkan berdasar pondok" href="<?= base_url() . url(3); ?>/<?= url(4); ?>/<?= url(5); ?>/<?= url(6); ?>/<?= url(7); ?>/pondok/<?= (url(9) == 'ASC' ? 'DESC' : 'ASC'); ?>/<?= url(10); ?>/<?= url(11); ?>"><?= (url(8) == 'pondok' && url(9) == 'DESC' ? $desc_icon : $asc_icon); ?></a></th>
 
-                <th>Masa Belajar <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Urutkan masa belajar" href="<?= base_url() . url(3); ?>/<?= url(4); ?>/<?= url(5); ?>/<?= url(6); ?>/<?= url(7); ?>/pengabdian/<?= (url(9) == 'ASC' ? 'DESC' : 'ASC'); ?>/<?= url(10); ?>/<?= url(11); ?>"><?= (url(8) == 'pengabdian' && url(9) == 'DESC' ? $desc_icon : $asc_icon); ?></a></th>
                 <th>Status <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Urutkan berdasar status" href="<?= base_url() . url(3); ?>/<?= url(4); ?>/<?= url(5); ?>/<?= url(6); ?>/<?= url(7); ?>/status/<?= (url(9) == 'ASC' ? 'DESC' : 'ASC'); ?>/<?= url(10); ?>/<?= url(11); ?>"><?= (url(8) == 'status' && url(9) == 'DESC' ? $desc_icon : $asc_icon); ?></a></th>
                 <th>Act</th>
             </thead>
@@ -207,6 +207,7 @@ $gender = ['L', 'P', 'All'];
                         <th scope="row"><?= ($k + 1); ?></th>
                         <td><?= $i['no_id']; ?></td>
                         <td><?= $i['nama']; ?></td>
+                        <td><?= $i['pengabdian']; ?></td>
                         <!-- <td><?= ($i['hp_ayah'] == '' || strlen($i['hp_ayah']) < 11 ? '-' : '<a class="btn_main send_wa" data-col="hp_ayah" data-order-id="' . $i['no_id'] . '" data-sapaan="Ayahanda" data-nama="' . $i['nama'] . '" data-no="+62' . substr($i['hp_ayah'], 1) . '" style="font-size:10px;" href=""><i class="fa-brands fa-whatsapp"></i> ' . $i['hp_ayah'] . '</a>'); ?></td>
                         <td><?= $i['umur']; ?></td> -->
 
@@ -224,7 +225,6 @@ $gender = ['L', 'P', 'All'];
                                 <?php endforeach; ?>
                             </select>
                         </td>
-                        <td><?= $i['pengabdian']; ?></td>
                         <td>
                             <select class="form-select form-select-sm change_status" data-id="<?= $i['no_id']; ?>" data-col="status" data-tabel="<?= menu()['tabel']; ?>">
                                 <?php foreach (options('Status') as $s) : ?>
